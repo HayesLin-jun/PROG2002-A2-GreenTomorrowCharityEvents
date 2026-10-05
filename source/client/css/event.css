@@ -1,0 +1,251 @@
+/* Green Tomorrow - A2-2: event.html facts rail + registration checklist. */
+
+.event-page {
+  padding: 36px 0 64px;
+}
+
+.event-head {
+  margin-bottom: 22px;
+}
+
+.event-head h1 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  margin: 8px 0 6px;
+  max-width: 800px;
+}
+
+.event-org {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* First screen: facts rail on the left, event image on the right. */
+
+.event-top {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.facts-rail {
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.facts-title {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.facts-list {
+  margin: 0 0 16px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fact-row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.fact-row:last-child {
+  border-bottom: 0;
+}
+
+.fact-row dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.fact-row dd {
+  margin: 0;
+  min-width: 0;
+  font-weight: 700;
+}
+
+.facts-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.facts-actions .button {
+  width: 100%;
+}
+
+.facts-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.event-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.event-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+/* Narrative sits below the first screen, in a narrower column. */
+
+.event-story {
+  max-width: 760px;
+  margin-top: 40px;
+}
+
+.event-story h2 {
+  font-size: 1.25rem;
+  margin: 24px 0 8px;
+}
+
+.event-story h2:first-child {
+  margin-top: 0;
+}
+
+.event-story p {
+  margin: 0;
+  color: var(--dark);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.gallery-item {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ---------------- Registration placeholder: action checklist ---------------- */
+
+.checklist-head {
+  max-width: 760px;
+  margin-bottom: 20px;
+}
+
+.checklist-head h1 {
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  margin: 8px 0 6px;
+}
+
+.checklist-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.checklist-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.checklist {
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.checklist h2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.checklist ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.checklist-media {
+  max-width: 560px;
+  margin-top: 24px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.checklist-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.checklist-actions {
+  margin: 24px 0 0;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 860px) {
+  .event-top {
+    grid-template-columns: 1fr;
+  }
+
+  .event-media {
+    order: -1;
+  }
+
+  .checklist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .fact-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Bright Path — D / A2-2 accent layer.
+   Loaded last on every page: a deeper workspace green with warm yellow
+   accents. Brand and colour family are unchanged, only extended.
+   ========================================================================== */
+
+.site-header {
+  background: #1f3a33;
+}
+
+.brand {
+  color: #fffdf7;
+}
+
+.brand-sub {
+  color: var(--yellow);
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  border-bottom-color: var(--yellow);
+}
+
+.eyebrow {
+  color: var(--ink-strong);
+}
+
+/* Board groups alternate the accent edge so long boards scan more easily. */
+.board-group:nth-child(even) {
+  border-left-color: var(--yellow);
+}
+
+/* Learning-role chips carry the yellow accent; they are the serviceType
+   dimension and stay visually distinct from category headings. */
+.role-chip {
+  border-color: var(--yellow-deep);
+  box-shadow: inset 3px 0 0 var(--yellow);
+}
+
+.role-chip:hover,
+.role-chip:focus-visible {
+  background: #fbf3dc;
+  border-color: var(--teal);
+}
+
+/* Category group headings in the catalogue use the yellow underline. */
+.group-head {
+  border-bottom-color: var(--yellow-deep);
+}
+
+/* Programme rows pick up a subtle warm edge on hover. */
+.programme-row:hover {
+  border-color: var(--yellow-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .programme-row,
+  .role-chip,
+  .button {
+    transition: none;
+  }
+}

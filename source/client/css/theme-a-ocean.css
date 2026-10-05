@@ -1,0 +1,51 @@
+/* Green Tomorrow A2-2: ocean-protection treatment for the "Ocean Discovery Desk".
+   Loaded last so it can tint the layout without changing the brand palette. */
+
+.site-header {
+  background: #eefafb;
+  border-bottom: 2px solid #b8d5d1;
+}
+
+.brand {
+  letter-spacing: 0.14em;
+}
+
+.desk {
+  background: linear-gradient(150deg, #d8f0ec, #f6fbfa 68%);
+}
+
+.desk h1,
+.search-head h1,
+.event-head h1,
+.checklist-head h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+.desk-banner,
+.index-media,
+.event-media,
+.checklist-media,
+.gallery-item {
+  background: #d8f0ec;
+}
+
+.channel-tile {
+  border-color: #9ec9c6;
+}
+
+.channel-name {
+  color: var(--primary-dark);
+}
+
+.index-card,
+.featured-thumb,
+.facts-rail,
+.checklist,
+.event-media {
+  border-radius: 2px;
+}
+
+.site-footer {
+  background: #eefafb;
+}

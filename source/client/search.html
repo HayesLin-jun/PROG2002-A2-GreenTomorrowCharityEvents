@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explore ocean events | Green Tomorrow</title>
+    <meta
+      name="description"
+      content="Search Green Tomorrow ocean protection activities by keyword, date, location and category."
+    >
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Explore ocean events | Green Tomorrow">
+    <meta property="og:image" content="/assets/og.jpg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/theme-a-ocean.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">
+            <img src="/assets/logo.svg" alt="" width="160" height="40">
+          </span>
+          Green Tomorrow
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#channels">Channels</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="search-page">
+        <div class="container">
+          <div class="search-banner">
+            <img
+              src="/assets/O-08.jpg"
+              alt="Volunteers surveying rockpool species along a rocky shoreline"
+              width="1600"
+              height="675"
+              decoding="async"
+            >
+          </div>
+
+          <div class="search-head">
+            <p class="eyebrow">Ocean events index</p>
+            <h1>Search marine and community activities</h1>
+            <p>Filter by keyword, date, location or category, then open an activity for the full brief.</p>
+          </div>
+
+          <!-- One compact toolbar row; field names match the API query parameters. -->
+          <form id="search-form" class="toolbar" role="search" aria-label="Filter activities">
+            <div class="field">
+              <label for="keyword">Keyword</label>
+              <input id="keyword" name="keyword" type="search" placeholder="Shoreline, tidepool…">
+            </div>
+            <div class="field">
+              <label for="date">Date</label>
+              <input id="date" name="date" type="date">
+            </div>
+            <div class="field">
+              <label for="location">Location</label>
+              <input id="location" name="location" type="text" placeholder="City or venue">
+            </div>
+            <div class="field">
+              <label for="category">Category</label>
+              <select id="category" name="category">
+                <option value="">All categories</option>
+                <option value="Forest">Forest</option>
+                <option value="Ocean">Ocean</option>
+                <option value="Wildlife">Wildlife</option>
+                <option value="Community">Community</option>
+              </select>
+            </div>
+            <div class="toolbar-actions">
+              <button class="button" type="submit">Search</button>
+              <button class="button secondary" id="clear" type="reset">Clear</button>
+            </div>
+          </form>
+
+          <div class="results-header">
+            <h2 id="result-count">Loading activities…</h2>
+            <a href="index.html">Back to the desk</a>
+          </div>
+
+          <div id="results" class="index-grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <strong>Green Tomorrow</strong>
+        <p>Ocean protection through open, local action.</p>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>

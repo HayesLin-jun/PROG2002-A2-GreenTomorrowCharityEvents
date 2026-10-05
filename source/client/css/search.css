@@ -1,0 +1,210 @@
+/* Green Tomorrow - A2-2: search.html banner, compact toolbar and index results. */
+
+.search-page {
+  padding: 24px 0 56px;
+}
+
+/* Narrow banner image sitting above the toolbar. */
+
+.search-banner {
+  margin-bottom: 24px;
+}
+
+.search-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 32 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--soft);
+}
+
+.search-head {
+  max-width: 720px;
+  margin-bottom: 20px;
+}
+
+.search-head h1 {
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  margin: 8px 0 6px;
+}
+
+.search-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* One compact toolbar row; wraps onto more rows on small screens. */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  padding: 14px;
+  margin-bottom: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  flex: 1 1 170px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  font: inherit;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.results-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Dense three-column index grid with a narrow image ratio. */
+
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.index-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow 0.18s ease;
+}
+
+.index-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.index-media {
+  aspect-ratio: 16 / 7;
+  background: var(--soft);
+  overflow: hidden;
+}
+
+.index-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.index-body {
+  padding: 12px 14px 14px;
+}
+
+.index-title {
+  margin: 6px 0;
+  font-size: 1.05rem;
+}
+
+.index-title a {
+  text-decoration: none;
+}
+
+.index-title a:hover {
+  text-decoration: underline;
+}
+
+.index-meta {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.index-meta div {
+  display: flex;
+  gap: 6px;
+  min-width: 0;
+}
+
+.index-meta dt {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.index-meta dd {
+  margin: 0;
+  min-width: 0;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 900px) {
+  .index-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .field {
+    flex: 1 1 auto;
+  }
+
+  .toolbar-actions {
+    justify-content: stretch;
+  }
+
+  .toolbar-actions .button {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .index-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-banner img {
+    aspect-ratio: 16 / 7;
+  }
+}

@@ -1,0 +1,248 @@
+/* Green Tomorrow - A2-2: index.html discovery desk, channel tiles, featured list. */
+
+/* ---------------- Discovery desk band ---------------- */
+
+.desk {
+  padding: 40px 0 44px;
+  border-bottom: 1px solid var(--line);
+}
+
+.desk-head {
+  max-width: 720px;
+}
+
+.desk h1 {
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  margin: 8px 0 10px;
+}
+
+.desk-intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.desk-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 32 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin: 24px 0;
+}
+
+/* Compact, single-row search strip that posts its values to search.html. */
+
+.desk-search {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)) auto;
+  gap: 10px;
+  align-items: end;
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.desk-field {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.desk-field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.desk-field input,
+.desk-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  font: inherit;
+}
+
+.desk-submit {
+  min-height: 42px;
+  align-self: end;
+}
+
+/* ---------------- Channel tiles (the four real categories) ---------------- */
+
+.desk-subtitle {
+  font-size: 1.2rem;
+  margin: 28px 0 12px;
+}
+
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.channel-tile {
+  display: block;
+  height: 100%;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition:
+    background-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.channel-tile:hover {
+  background: #e6f6f4;
+  transform: translateY(-2px);
+}
+
+.channel-name {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.channel-note {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------------- Featured activities: dense row list ---------------- */
+
+.featured-list {
+  display: grid;
+  gap: 0;
+}
+
+.featured-row {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr) auto auto;
+  grid-template-areas: "thumb info status link";
+  gap: 16px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.featured-thumb {
+  grid-area: thumb;
+  width: 104px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.featured-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.featured-info {
+  grid-area: info;
+  min-width: 0;
+}
+
+.featured-title {
+  margin: 0 0 2px;
+  font-size: 1.05rem;
+}
+
+.featured-title a {
+  text-decoration: none;
+}
+
+.featured-title a:hover {
+  text-decoration: underline;
+}
+
+.featured-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.featured-location {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.featured-row .tag {
+  grid-area: status;
+  justify-self: start;
+}
+
+.featured-link {
+  grid-area: link;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 900px) {
+  .channel-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .desk-search {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .desk-submit {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .desk {
+    padding: 28px 0 32px;
+  }
+
+  .desk-banner {
+    aspect-ratio: 16 / 7;
+  }
+
+  .desk-search {
+    grid-template-columns: 1fr;
+  }
+
+  .channel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-row {
+    grid-template-columns: 76px minmax(0, 1fr);
+    grid-template-areas:
+      "thumb info"
+      "thumb status"
+      "thumb link";
+    row-gap: 6px;
+  }
+
+  .featured-thumb {
+    width: 76px;
+  }
+}

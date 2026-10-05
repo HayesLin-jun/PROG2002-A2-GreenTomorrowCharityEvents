@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Green Tomorrow | Ocean discovery desk</title>
+    <meta
+      name="description"
+      content="Green Tomorrow's ocean protection branch: a discovery desk for practical marine, shoreline and community activities."
+    >
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Green Tomorrow | Ocean discovery desk">
+    <meta property="og:image" content="/assets/og.jpg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/theme-a-ocean.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">
+            <img src="/assets/logo.svg" alt="" width="160" height="40">
+          </span>
+          Green Tomorrow
+        </a>
+        <div class="nav-links">
+          <a href="search.html">Explore events</a>
+          <a href="index.html#channels">Channels</a>
+          <a class="button" href="search.html">Take action</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Discovery desk: compact search strip plus the four real category channels. -->
+      <section class="desk" aria-labelledby="desk-title">
+        <div class="container">
+          <div class="desk-head">
+            <p class="eyebrow">Ocean Discovery Desk</p>
+            <h1 id="desk-title">A practical workbench for marine protection.</h1>
+            <p class="desk-intro">
+              Search shoreline clean-ups, wildlife surveys and community sessions, then pick a
+              channel below to narrow the list to one kind of work.
+            </p>
+          </div>
+
+          <img
+            class="desk-banner"
+            src="/assets/O-01.jpg"
+            alt="Tide-pool marine life, including anemones and small crabs, on a protected rocky shore"
+            width="1600"
+            height="900"
+            decoding="async"
+          >
+
+          <form class="desk-search" action="search.html" method="get" role="search" aria-label="Search activities">
+            <div class="desk-field">
+              <label for="desk-keyword">Keyword</label>
+              <input id="desk-keyword" name="keyword" type="search" placeholder="Shoreline, tidepool, coral…">
+            </div>
+            <div class="desk-field">
+              <label for="desk-date">Date</label>
+              <input id="desk-date" name="date" type="date">
+            </div>
+            <div class="desk-field">
+              <label for="desk-location">Location</label>
+              <input id="desk-location" name="location" type="text" placeholder="City or venue">
+            </div>
+            <div class="desk-field">
+              <label for="desk-category">Channel</label>
+              <select id="desk-category" name="category">
+                <option value="">All categories</option>
+                <option value="Forest">Forest</option>
+                <option value="Ocean">Ocean</option>
+                <option value="Wildlife">Wildlife</option>
+                <option value="Community">Community</option>
+              </select>
+            </div>
+            <button class="button desk-submit" type="submit">Search</button>
+          </form>
+
+          <h2 class="desk-subtitle" id="channels">Channels</h2>
+          <ul class="channel-grid" aria-labelledby="channels">
+            <li>
+              <a class="channel-tile" href="search.html?category=Forest">
+                <span class="channel-name">Forest</span>
+                <span class="channel-note">Woodland and tree planting work</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-tile" href="search.html?category=Ocean">
+                <span class="channel-name">Ocean</span>
+                <span class="channel-note">Shoreline, river and coastal clean-ups</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-tile" href="search.html?category=Wildlife">
+                <span class="channel-name">Wildlife</span>
+                <span class="channel-note">Habitat and species surveys</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-tile" href="search.html?category=Community">
+                <span class="channel-name">Community</span>
+                <span class="channel-note">Neighbourhood conservation days</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Featured activities: dense list, no large narrative cards. -->
+      <section class="page-section" aria-labelledby="featured-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Featured</p>
+              <h2 id="featured-title">Next three activities</h2>
+            </div>
+            <a href="search.html">See all events</a>
+          </div>
+          <div id="featured-events" class="featured-list" aria-live="polite">
+            <div class="state" role="status">Loading featured activities…</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <strong>Green Tomorrow</strong>
+        <p>Ocean protection through open, local action.</p>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
